@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake 3D</title>
+    <!--Google Fonts and Icons-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+
+        background: #1d1e22;
+      }
+      .layer {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        transition: 1.2s cubic-bezier(0.71, 0, 0.38, 1);
+      }
+      #layer1 {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        background: rgb(255, 239, 219);
+        z-index: 2;
+      }
+      .can-container {
+        width: 200px;
+        position: relative;
+        overflow: hidden;
+
+        /*adjustment for the label button*/
+        margin-top: 75px;
+      }
+      .can-img {
+        width: 100%;
+      }
+      .wrapper {
+        position: absolute;
+        height: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -53%);
+        mix-blend-mode: multiply;
+        transition: 10s cubic-bezier(0.71, 0, 0.38, 1);
+      }
+      .text {
+        font-family: poppins;
+        font-size: 175px;
+        font-weight: 500;
+        color: rgb(255, 213, 159);
+        position: absolute;
+        transition: 1.2s cubic-bezier(0.71, 0, 0.38, 1);
+        display: none;
+      }
+      .fruits {
+        position: absolute;
+        transition: cubic-bezier(0.71, 0, 0.38, 1) 1.2s;
+        display: none;
+      }
+      .fruits img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: cubic-bezier(0.71, 0, 0.38, 1) 1.2s;
+      }
+      #layer1 .fruits img:nth-child(1) {
+        width: 125px;
+        translate: -225px -150px;
+      }
+      #layer1 .fruits img:nth-child(2) {
+        width: 180px;
+        translate: 275px -50px;
+      }
+      #layer1 .fruits img:nth-child(3) {
+        width: 250px;
+        translate: -175px 115px;
+      }
+      #layer2 {
+        background: rgb(229, 254, 193);
+        z-index: 1;
+      }
+      #layer2 .text {
+        color: rgb(181, 235, 115);
+      }
+      #layer2 .fruits img:nth-child(1) {
+        width: 75px;
+        translate: 180px 90px;
+      }
+      #layer2 .fruits img:nth-child(2) {
+        width: 275px;
+        translate: 225px -125px;
+      }
+      #layer2 .fruits img:nth-child(3) {
+        width: 200px;
+        translate: -200px 50px;
+      }
+      #toggle {
+        display: none;
+      }
+      .layer label {
+        display: block;
+        font-family: poppins;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: 0.5mm solid black;
+        border-radius: 10mm;
+        cursor: pointer;
+        margin-top: 75px;
+      }
+      #toggle:checked ~ #layer1 .can-container .wrapper {
+        left: -50%;
+      }
+      #toggle:checked ~ #layer1 .text {
+        translate: 150% 0;
+      }
+      #toggle:checked ~ #layer1 .fruits {
+        translate: 125vw 0;
+      }
+      #toggle:checked ~ #layer1 .fruits img {
+        translate: -100% 0;
+      }
+      #toggle:not(:checked) ~ #layer2 .can-container .wrapper {
+        left: 150%;
+      }
+      #toggle:not(:checked) ~ #layer2 .text {
+        translate: -150% 0;
+      }
+      #toggle:not(:checked) ~ #layer2 .fruits {
+        translate: -125vw 0;
+      }
+      #toggle:not(:checked) ~ #layer2 .fruits img {
+        translate: -100% 0;
+      }
+      /* #toggle:checked ~ #layer1 {
+      } */
+    </style>
+  </head>
+  <body>
+    <input type="checkbox" id="toggle" />
+    <div class="layer" id="layer1">
+      <div class="text">Orange</div>
+
+      <div class="can-container">
+        <img src="can.png" alt="" class="can-img" />
+
+        <img src="./Contents.png" alt="" class="wrapper" />
+      </div>
+
+      <div class="fruits">
+        <img src="./orange-3.png" alt="" />
+        <img src=".orange-2.png" alt="" />
+        <img src="./orange-1.png" alt="" />
+      </div>
+
+      <label for="toggle">Click to Slide</label>
+    </div>
+    <div class="layer" id="layer2">
+      <div class="text">Pineapple</div>
+
+      <div class="can-container">
+        <img src="./can.png" alt="" class="can-img" />
+
+        <img src="./Contents-2.png" alt="" class="wrapper" />
+      </div>
+
+      <div class="fruits">
+        <img src="./pineapple-3.png" alt="" />
+        <img src="./pineapple-2.png" alt="" />
+        <img src="./pineapple-1.png" alt="" />
+      </div>
+
+      <label for="toggle">Click to Slide</label>
+    </div>
+  </body>
+</html>
