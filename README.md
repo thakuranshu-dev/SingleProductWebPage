@@ -35,6 +35,10 @@ This project is a simple web page designed to showcase a single product. It uses
 - Modify the HTML, CSS, and JavaScript files to customize the web page.
 - Add your own product details and styles to make it unique.
 
+## License
+
+This repository is currently unlicensed.
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
