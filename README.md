@@ -28,7 +28,7 @@ This project is a simple web page designed to showcase a single product. It uses
    ```bash
    cd SingleProductWebPage
 
-3. Open index.html in your web browser to view the web page.
+3. Open **index.html** in your web browser to view the web page.
 
 ## Usage
 
@@ -39,7 +39,3 @@ This project is a simple web page designed to showcase a single product. It uses
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
-## License
-
-This project is licensed under the MIT License.
-Feel free to customize this README file according to your project's specific details and requirements.
