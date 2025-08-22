@@ -23,8 +23,20 @@
             <img src="./assets/orange-2.png" alt="">
             <img src="./assets/orange-3.png" alt="">
         </div>
-        <!-- <label for="toggle">Click to slide</label> -->
+
+        <div class="cta-wrapper">
+            <div class="wrapper" >
+            <div class="wrapper dock">
+                <div class="effect"></div>
+                <div class="shine"></div>
+                <div class="dock" id="content">
+                    <button class="cta-btn btn">Buy Now</button>
+                </div>  
+                </div>
+                </div>
+        </div>
     </div>
+    
     
     <div class="layer " id="layer2">
         <div class="text">Pineapple </div>
@@ -37,37 +49,45 @@
             <img src="./assets/pineapple-2.png" alt="">
             <img src="./assets/pineapple-3.png" alt="">
         </div>
-        <!-- <label for="toggle">Click to slide</label> -->
-    </div>
-    <div class="layer" id="layer1">
-        <div class="text">Orange </div>
-        <div id="can-container">
-            <img src="./assets/can.png" alt="Product" class="can-image">
-            <img src="./assets/Contents.png" alt="ProductInfo" class="wrapper-img" id="wrapper-1">
+        <div class="cta-wrapper">
+            <div class="wrapper" >
+            <div class="wrapper dock">
+                <div class="effect"></div>
+                <div class="shine"></div>
+                <div class="dock" id="content">
+                    <button class="cta-btn btn">Buy Now</button>
+                </div>  
+                </div>
+                </div>
         </div>
-        <div class="fruits">
-            <img src="./assets/orange-1.png" alt="">
-            <img src="./assets/orange-2.png" alt="">
-            <img src="./assets/orange-3.png" alt="">
-        </div>
-        <!-- <label for="toggle">Click to slide</label> -->
     </div>
     
-    <div class="layer " id="layer2">
-        <div class="text">Pineapple </div>
-        <div id="can-container">
-            <img src="./assets/can.png" alt="Product" class="can-image">
-            <img src="./assets/Contents-2.png" alt="ProductInfo" class="wrapper-img" id="wrapper-2">
+    <svg>
+        <filter id="glass-distortion">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="20" result="turbulence"/>
+            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="10" />
+        </filter>
+    </svg>
+    <button id="nextBtn" class="btn" onclick="nextProduct()">
+        <div class="wrapper" id="draggable">
+            <div class="wrapper dock">
+                <div class="effect"></div>
+                <div class="shine"></div>
+                    <div class="dock" id="content">
+                        <img src="./assets/Arrow.png" id="rightArrow"></button> 
+                    </div>  
+            </div>
         </div>
-        <div class="fruits">
-            <img src="./assets/pineapple-1.png" alt="">
-            <img src="./assets/pineapple-2.png" alt="">
-            <img src="./assets/pineapple-3.png" alt="">
+    <button id="prevBtn" class="btn" onclick="prevProduct()"> 
+        <div class="wrapper" id="draggable">
+            <div class="wrapper dock">
+                <div class="effect"></div>
+                <div class="shine"></div>
+                    <div class="dock" id="content">
+                        <img src="./assets/Arrow.png" id="leftArrow"></button> 
+                    </div> 
+            </div>
         </div>
-        <!-- <label for="toggle">Click to slide</label> -->
-    </div>
-    <button id="nextBtn" class="btn" onclick="nextProduct()"> <img src="./assets/Arrow.png" id="rightArrow"></button> 
-    <button id="prevBtn" class="btn" onclick="prevProduct()"> <img src="./assets/Arrow.png" id="leftArrow"></button> 
 
     <script src="script.js" ></script>
 </body>
